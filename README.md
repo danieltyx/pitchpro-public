@@ -1,136 +1,109 @@
 
-<div class="pitch-deck" style="background: linear-gradient(135deg, #1a1a1a, #2a2a2a);">
+# 🎤 PitchPro AI – Revolutionizing Presentations 🚀
 
-# <span style="color: #4A90E2; font-size: 4em; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">PitchPro</span>
-<p align="center" style="color: #4A90E2; font-style: italic;">Revolutionizing How We Present</p>
-
----
-
-# <span style="color: #E74C3C;">The Problem</span>
-<div style="background: rgba(231, 76, 60, 0.1); padding: 20px; border-radius: 10px;">
-
-- 🔄 **Presentations are stuck in the past**
-- 💔 **Speakers break flow to navigate slides**
-- ⏰ **Hours wasted on backup slides**
-- 📊 **Rigid formats kill natural conversation**
-- ❌ **Lost context during Q&A sessions**
-</div>
+**PitchPro AI** is a powerful, AI-driven tool that turns static slides into interactive, real-time presentations. PitchPro listens, adapts, and guides your narrative, letting you focus on delivering an engaging message.
 
 ---
 
-# <span style="color: #27AE60;">Market Opportunity</span>
-<div style="background: rgba(39, 174, 96, 0.1); padding: 20px; border-radius: 10px;">
+## 🌟 Key Features
 
-## Target Market
-<div style="display: flex; justify-content: space-around; margin: 20px 0;">
-<div style="text-align: center;">
-    <h3>28M</h3>
-    <p>Daily Presentations</p>
-</div>
-<div style="text-align: center;">
-    <h3>500M+</h3>
-    <p>PowerPoint Users</p>
-</div>
-<div style="text-align: center;">
-    <h3>$2B</h3>
-    <p>Market Size</p>
-</div>
-</div>
-</div>
+- **🎯 Automatic Navigation**  
+  PitchPro intelligently navigates your slides based on your speech, eliminating the need for manual control.
+
+- **📈 Dynamic Content Expansion**  
+  Adapts and expands content on-the-fly, so you can dive deeper or answer questions with ease.
+
+- **🧠 Contextual Q&A Handling**  
+  Respond to audience questions smoothly, as PitchPro ensures each response stays within context.
+
+- **🎥 Smooth Speaker Flow**  
+  Minimize manual transitions, maintain your natural rhythm, and let PitchPro handle the logistics.
 
 ---
 
-# <span style="color: #3498DB;">Our Solution</span>
-<div style="background: rgba(52, 152, 219, 0.1); padding: 20px; border-radius: 10px;">
+## 🎬 Product Overview
 
-## PitchPro actively listens and adapts presentations in real-time:
+1. **Upload Your Presentation**  
+   Upload your markdown files and let PitchPro bring them to life.
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-<div>
-    🎯 **Auto-navigation**<small>Intelligent content routing</small>
-</div>
-<div>
-    📈 **Dynamic expansion**
-    <small>Real-time topic adaptation</small>
-</div>
-<div>
-    🤖 **Smart generation**
-    <small>AI-powered content creation</small>
-</div>
-<div>
-    🧠 **Contextual awareness**
-    <small>Seamless Q&A handling</small>
-</div>
-</div>
-</div>
+2. **Real-Time Navigation**  
+   PitchPro automatically navigates your slides as you present, freeing you to focus on the message.
+
+3. **Dynamic Content Generation**  
+   The AI actively listens and enriches your content in response to the conversation.
 
 ---
 
-# <span style="color: #9B59B6;">Product Demo</span>
+## 🏗️ Technical Architecture
 
-<div style="background: rgba(155, 89, 182, 0.1); padding: 20px; border-radius: 10px;">
-<div align="center">
+PitchPro’s architecture combines voice analysis and AI-powered slide adaptation. Here’s an overview of the process:
 
-### 🚀 Upload Your Presentation
-<img src="https://i.postimg.cc/5tq51pL0/Image-20241110072658.png" width="80%" style="border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);"/>
-<p><em>Simple drag-and-drop interface for your markdown files</em></p>
+```mermaid
+flowchart TD
+    subgraph Input
+        A[Markdown Slides Generator] --> C
+        B[Upload .md File] --> C
+    end
 
-### 🎯 Watch It Come Alive
-<img src="https://i.postimg.cc/652dTBnF/Image-20241110072835.png" width="80%" style="border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);"/>
-<p><em>Seamless real-time navigation as you speak</em></p>
+    C[Parse into Presentation]
+    C --> D[Start Presentation]
+    
+    D --> E[Record the audio]
+    
+    subgraph Processing
+        F[Vectorspace Calculation]
+        E --> G[Similarity Detection]
+        C --> F
+        F --> G
+    end
+    
+    G -->|Above Threshold| H[Locate the corresponding slide]
+    G -->|Below Threshold| I[New content]
+    
+    I -->|New Content| J[Create a new page automatically]
+    I -->|Relevant to slide| K[Restructure the slide and add new info]
 
-### ✨ Dynamic Content Generation
-<img src="https://i.postimg.cc/15kDqbKX/Image-20241110072947.png" width="80%" style="border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);"/>
-<p><em>AI automatically expands and adapts your content</em></p>
-</div>
-</div>
+    style D fill:#66CDAA,stroke:#333,stroke-width:2px
+    style A fill:#87CEFA,stroke:#333,stroke-width:2px
+    style B fill:#87CEFA,stroke:#333,stroke-width:2px
+    style C fill:#87CEFA,stroke:#333,stroke-width:2px
+    style E fill:#87CEFA,stroke:#333,stroke-width:2px
+    style F fill:#4169E1,stroke:#333,stroke-width:2px
+    style G fill:#4169E1,stroke:#333,stroke-width:2px
+    style H fill:#87CEFA,stroke:#333,stroke-width:2px
+    style I fill:#87CEFA,stroke:#333,stroke-width:2px
+    style J fill:#87CEFA,stroke:#333,stroke-width:2px
+    style K fill:#87CEFA,stroke:#333,stroke-width:2px
+```
 
 ---
 
-# <span style="color: #F1C40F;">Technical Architecture</span>
-<div style="background: rgba(241, 196, 15, 0.1); padding: 20px; border-radius: 10px;">
+## 🔍 Why PitchPro Stands Out
 
-<img src="https://i.postimg.cc/tJr2bD0P/Image-20241110071943.png" width="100%" style="border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);"/>
-<p align="center"><em>Advanced AI-Powered Architecture</em></p>
-</div>
+| Feature               | Traditional Tools  | PitchPro AI     |
+|-----------------------|--------------------|------------------|
+| Navigation            | Manual             | Automatic       |
+| Content Adaptation    | Static             | Dynamic         |
+| Speaker Focus         | Split              | Complete        |
+| Q&A Handling          | Limited            | Seamless        |
+| Setup Time            | Hours              | Minutes         |
 
 ---
 
-# <span style="color: #E67E22;">Competitive Advantage</span>
-<div style="background: rgba(230, 126, 34, 0.1); padding: 20px; border-radius: 10px;">
+## 📈 Market Opportunity
 
-<table style="width: 100%; border-collapse: separate; border-spacing: 0 8px;">
-<tr style="background: rgba(52, 152, 219, 0.1);">
-    <th style="padding: 12px; border-radius: 5px 0 0 5px;">Feature</th>
-    <th style="padding: 12px;">Traditional</th>
-    <th style="padding: 12px; border-radius: 0 5px 5px 0;">PitchPro</th>
-</tr>
-<tr style="background: rgba(255, 255, 255, 0.05);">
-    <td style="padding: 12px;">Navigation</td>
-    <td style="padding: 12px;">❌ Manual</td>
-    <td style="padding: 12px;">✅ Automatic</td>
-</tr>
-<tr style="background: rgba(255, 255, 255, 0.05);">
-    <td style="padding: 12px;">Content Adaptation</td>
-    <td style="padding: 12px;">❌ Static</td>
-    <td style="padding: 12px;">✅ Dynamic</td>
-</tr>
-<tr style="background: rgba(255, 255, 255, 0.05);">
-    <td style="padding: 12px;">Speaker Focus</td>
-    <td style="padding: 12px;">❌ Split</td>
-    <td style="padding: 12px;">✅ Complete</td>
-</tr>
-<tr style="background: rgba(255, 255, 255, 0.05);">
-    <td style="padding: 12px;">Q&A Handling</td>
-    <td style="padding: 12px;">❌ Limited</td>
-    <td style="padding: 12px;">✅ Seamless</td>
-</tr>
-<tr style="background: rgba(255, 255, 255, 0.05);">
-    <td style="padding: 12px;">Setup Time</td>
-    <td style="padding: 12px;">❌ Hours</td>
-    <td style="padding: 12px;">✅ Minutes</td>
-</tr>
-</table>
-</div>
+With **28 million presentations given daily** and a **$2 billion market** for presentation software, PitchPro AI is meeting the demand for intelligent, adaptive presentation tools that elevate audience engagement.
 
-</div>
+---
+
+## 🤝 Contributing
+
+We welcome contributions! Please refer to [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on how to get started.
+
+## 📄 License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+
+---
+
+We're excited to have you join us in transforming presentations! 🎉
