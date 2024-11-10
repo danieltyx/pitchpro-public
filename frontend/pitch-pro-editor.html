@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pitch Pro - Editor</title>
+    <script src="https://unpkg.com/stackedit-js@1.0.7/docs/lib/stackedit.min.js"></script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            min-height: 100vh;
+        }
+
+        .product-header {
+            padding: 1.5rem;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #2D3748;
+            margin: 0;
+        }
+
+        .logo span {
+            background: linear-gradient(135deg, #4a90e2, #45a049);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .editor-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .toolbar {
+            background-color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .button {
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .button:hover {
+            background-color: #357abd;
+        }
+
+        .button.save {
+            background-color: #4CAF50;
+        }
+
+        .button.save:hover {
+            background-color: #45a049;
+        }
+
+        .editor {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            min-height: 500px;
+        }
+
+        #markdown-editor {
+            width: 100%;
+            min-height: 500px;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 14px;
+            line-height: 1.6;
+            resize: vertical;
+        }
+
+        .preview {
+            margin-top: 2rem;
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .preview-content {
+            max-width: 100%;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <header class="product-header">
+        <h1 class="logo">
+            <span>Pitch Pro</span>
+        </h1>
+    </header>
+
+    <div class="editor-container">
+        <div class="toolbar">
+            <button class="button" onclick="openStackEdit()">
+                <span>📝</span> Open Editor
+            </button>
+            <button class="button save" onclick="saveDeck()">
+                <span>💾</span> Save Deck
+            </button>
+        </div>
+
+        <div class="editor">
+            <textarea id="markdown-editor" placeholder="Your presentation content will appear here..."></textarea>
+        </div>
+
+        <div class="preview">
+            <h2>Preview</h2>
+            <div id="preview-content" class="preview-content"></div>
+        </div>
+    </div>
+
+    <script>
+        const textarea = document.getElementById('markdown-editor');
+        const preview = document.getElementById('preview-content');
+        const stackedit = new Stackedit();
+
+        function openStackEdit() {
+
+
+            stackedit.openFile({
+                name: 'New Pitch Deck',
+                content: {
+                    text: textarea.value || '# My Pitch Deck\n\n## Slide 1\n\nStart your presentation here...'
+                }
+            });
+
+            stackedit.on('fileChange', (file) => {
+
+                console.log(file.content.text);
+                textarea.value = file.content.text;
+
+                preview.innerHTML = file.content.html;
+            });
+
+            stackedit.on('close', () => {
+                const currentContent = textarea.value;
+                // print the current content to the console
+      
+                stackedit.markdown.render(currentContent, {}).then(result => {
+                    preview.innerHTML = result.html;
+                    textarea.value = currentContent;
+                });
+                
+                console.log('Editor closed, content synced');
+            });
+        }
+
+        function saveDeck() {
+            // Add your save functionality here
+            console.log('Saving deck:', textarea.value);
+            alert('Deck saved successfully!');
+        }
+
+        // Initialize with default content
+        textarea.value = '# My Pitch Deck\n\n## Slide 1\n\nStart your presentation here...';
+        
+        // Open editor automatically when the page loads
+        setTimeout(openStackEdit, 500);
+    </script>
+</body>
+</html>

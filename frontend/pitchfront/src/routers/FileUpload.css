@@ -1,0 +1,168 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    margin: 0;
+    background-color: #f5f5f5;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.product-header {
+    width: 100%;
+    padding: 1.5rem 0;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2D3748;
+    margin: 0;
+}
+
+.logo span {
+    background: linear-gradient(135deg, #4a90e2, #45a049);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.upload-container {
+    background-color: white;
+    padding: 3rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: 2rem auto;
+    width: 1200px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.drop-zone {
+    width: 800px;
+    height: 250px;
+    border: 2px dashed #4a90e2;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+    margin: 0 auto;
+}
+
+.drop-zone:hover, .drop-zone.dragover {
+    border-color: #357abd;
+    background-color: #f8f9fa;
+}
+
+.drop-zone-text {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.icon {
+    font-size: 2rem;
+    color: #4a90e2;
+    margin-bottom: 1rem;
+}
+
+#fileList {
+    width: 800px;
+    margin: 1rem auto;
+    text-align: left;
+}
+
+.file-item {
+    background-color: #f8f9fa;
+    padding: 0.5rem;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+}
+
+.divider {
+    width: 800px;
+    margin: 2rem auto;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #666;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #ddd;
+}
+
+.divider span {
+    padding: 0 1rem;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    width: 800px;
+    margin: 0 auto;
+}
+
+.blue-button {
+    background-color: #4A90E2;
+}
+
+.green-button {
+    background-color: #4CAF50;
+}
+
+.create-deck-button {
+    width: 800px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    opacity: 0.9;
+}
+
+.create-deck-button:hover {
+    opacity: 0.9;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1300px) {
+    .upload-container {
+        width: 90%;
+        padding: 2rem;
+    }
+
+    .drop-zone,
+    #fileList,
+    .divider,
+    .create-deck-button {
+        width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    .drop-zone {
+        height: 200px;
+    }
+}
