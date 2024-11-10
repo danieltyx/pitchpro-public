@@ -96,10 +96,6 @@ With **28 million presentations given daily** and a **$2 billion market** for pr
 
 ---
 
-## 🤝 Contributing
-
-We welcome contributions! Please refer to [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on how to get started.
-
 ## 📄 License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
